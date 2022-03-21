@@ -108,6 +108,10 @@
 
   <v-footer app>
     <!-- -->
+      <v-col class="text-center" cols="12">
+        {{ new Date().getFullYear() }} —
+        Desenvolvido por  <a id="foot" href="https://lildiop2.github.io/"><strong>Abdul Kevin Alexis</strong></a>
+      </v-col>
   </v-footer>
 </v-app>
   
