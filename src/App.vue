@@ -29,23 +29,24 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn
-  
+        fab
         small
         @click="isEditing = !isEditing"
         
       >
-      
-      <h4 v-if="isEditing" class="ml-4">
-        fechar
-      </h4>
-      <h4 v-else class="ml-4">
-        editar
-      </h4>
         <v-icon
           dark
-          right
+        
+          v-if="isEditing"
         >
-          mdi-cancel
+          mdi-close
+        </v-icon>
+        <v-icon
+          dark
+         
+          v-else
+        >
+          mdi-pencil
         </v-icon>
       </v-btn>
     </v-toolbar>
@@ -65,6 +66,15 @@
         outlined
         v-model="funcao"
       ></v-text-field>
+      <v-text-field
+        :disabled="!isEditing"
+        color="dark"
+        label="Telefone"
+        outlined
+        v-model="telephone"
+        v-show="checkbox"
+       
+      ></v-text-field>
 
           <v-select
           :disabled="!isEditing"
@@ -74,6 +84,14 @@
          outlined
          required
         ></v-select>
+
+          <v-checkbox
+          :disabled="!isEditing"
+              v-model="checkbox"
+              label="Consultor"
+              color="info"
+            ></v-checkbox>
+
      
     </v-card-text>
     <v-divider></v-divider>
@@ -134,8 +152,8 @@ export default {
     funcao: "Funcao Exercida",
     logo_empresa:"../assets/logo_voice_manager.png",
     link_site:"https://voicemanager.cloud/",
-     telephone:"String",
-      email:"String",
+     telephone:"+5531999990000",
+      email:"teste@email.com.br",
       endereco: "String",
       link_endereco: "String",
       facebook:"String",
@@ -149,13 +167,14 @@ export default {
         'Metodo',
         'Voice Manager'
       ],
+      checkbox:false,
     }
   },
   methods:{
     save () {
         this.isEditing = !this.isEditing
         this.hasSaved = true
-        if(this.select==="Voice Manager"){
+        if(this.select==="Voice Manager" && !this.checkbox){
             this.logo_empresa="https://media-exp1.licdn.com/dms/image/C4D0BAQFfCDHi9S_dyA/company-logo_200_200/0/1647884157419?e=1655942400&v=beta&t=cOeOowwmUfYGZHLWYZ9lYQOaGPcyNxTiyYOaTu96Qt0",
             this.link_site="https://voicemanager.cloud/",
             this.telephone="0800 580 5811",
@@ -168,7 +187,8 @@ export default {
             this.linkedin="https://br.linkedin.com/company/voice-manager",
             this.instagram="https://www.instagram.com/voice_manager/",
             this.youtube="https://www.youtube.com/c/VoiceManager/videos"
-        }else{
+
+        }else if(this.select==="Metodo" && !this.checkbox){
            this.logo_empresa="https://media-exp1.licdn.com/dms/image/C4D0BAQHXdfvHPgp7qg/company-logo_200_200/0/1610112149514?e=1655942400&v=beta&t=4FFTHMRRbH1Kbz8Rn66gmDHowMpdiGM42-dasuAwFSE",
             this.link_site="https://metodotelecom.com.br/",
             this.telephone="(31) 2102-1100",
@@ -182,8 +202,34 @@ export default {
             this.instagram="https://instagram.com/metodotelecom",
             this.youtube="https://www.youtube.com/channel/UCCSl775QesXJ0CiJcRyLxaA"
 
+        }else if(this.select==="Voice Manager" && this.checkbox){
+           this.logo_empresa="https://media-exp1.licdn.com/dms/image/C4D0BAQFfCDHi9S_dyA/company-logo_200_200/0/1647884157419?e=1655942400&v=beta&t=cOeOowwmUfYGZHLWYZ9lYQOaGPcyNxTiyYOaTu96Qt0",
+            this.link_site="https://voicemanager.cloud/",
+            this.link_telephone="tel:"+this.telephone,
+            this.email="contato@voicemanager.cloud",
+            this.link_email="mailto:atendimento@metodotelecom.com.br",
+            this.endereco="Av. das Nações Unidas, n° 12.995 - 10 andar - Cidade Monções, São Paulo - SP, 04578-000",
+            this.link_endereco="https://goo.gl/maps/AouhvHFfFh8GfoUU6",
+            this.facebook="https://www.facebook.com/voicemanagercloud",
+            this.linkedin="https://br.linkedin.com/company/voice-manager",
+            this.instagram="https://www.instagram.com/voice_manager/",
+            this.youtube="https://www.youtube.com/c/VoiceManager/videos"
+
+        } else if(this.select==="Metodo" && this.checkbox){
+           this.logo_empresa="https://media-exp1.licdn.com/dms/image/C4D0BAQHXdfvHPgp7qg/company-logo_200_200/0/1610112149514?e=1655942400&v=beta&t=4FFTHMRRbH1Kbz8Rn66gmDHowMpdiGM42-dasuAwFSE",
+            this.link_site="https://metodotelecom.com.br/",
+            this.link_telephone="tel:"+this.telephone,
+            this.link_email="mailto:atendimento@metodotelecom.com.br",
+            this.email="atendimento@metodotelecom.com.br",
+            this.endereco=" Av. Barão Homem de Melo, 3382, 1° andar, Estoril, Belo Horizonte/MG",
+            this.link_endereco="https://goo.gl/maps/DaJ9pZQGK1PPjvNh8",
+            this.facebook="https://www.facebook.com/metodotelecom/",
+            this.linkedin="https://www.linkedin.com/company/metodo-telecomunicacoes/",
+            this.instagram="https://instagram.com/metodotelecom",
+            this.youtube="https://www.youtube.com/channel/UCCSl775QesXJ0CiJcRyLxaA"
+
         }
-        console.log(this.logo_empresa +"===>"+ this.link_site)
+        
       },
   }
 }
