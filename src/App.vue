@@ -150,7 +150,7 @@ export default {
   return {
     nome: "Fulano de Tal",
     funcao: "Funcao Exercida",
-    logo_empresa:"../assets/logo_voice_manager.png",
+    logo_empresa:"https://live.staticflickr.com/65535/52191915987_cc205098ba_q.jpg",
     link_site:"https://voicemanager.cloud/",
      telephone:"+5531999990000",
       email:"teste@email.com.br",
@@ -175,7 +175,7 @@ export default {
         this.isEditing = !this.isEditing
         this.hasSaved = true
         if(this.select==="Voice Manager" && !this.checkbox){
-            this.logo_empresa="https://media-exp1.licdn.com/dms/image/C4D0BAQFfCDHi9S_dyA/company-logo_200_200/0/1647884157419?e=1655942400&v=beta&t=cOeOowwmUfYGZHLWYZ9lYQOaGPcyNxTiyYOaTu96Qt0",
+            this.logo_empresa="https://live.staticflickr.com/65535/52193414795_81580c432d_q.jpg",
             this.link_site="https://voicemanager.cloud/",
             this.telephone="0800 580 5811",
             this.link_telephone="tel:0800 580 5811",
@@ -189,7 +189,7 @@ export default {
             this.youtube="https://www.youtube.com/c/VoiceManager/videos"
 
         }else if(this.select==="Metodo" && !this.checkbox){
-           this.logo_empresa="https://media-exp1.licdn.com/dms/image/C4D0BAQHXdfvHPgp7qg/company-logo_200_200/0/1610112149514?e=1655942400&v=beta&t=4FFTHMRRbH1Kbz8Rn66gmDHowMpdiGM42-dasuAwFSE",
+           this.logo_empresa="https://live.staticflickr.com/65535/52193219854_b69ee35946_q.jpg",
             this.link_site="https://metodotelecom.com.br/",
             this.telephone="(31) 2102-1100",
             this.link_telephone="tel:+553121021100",
@@ -203,7 +203,7 @@ export default {
             this.youtube="https://www.youtube.com/channel/UCCSl775QesXJ0CiJcRyLxaA"
 
         }else if(this.select==="Voice Manager" && this.checkbox){
-           this.logo_empresa="https://media-exp1.licdn.com/dms/image/C4D0BAQFfCDHi9S_dyA/company-logo_200_200/0/1647884157419?e=1655942400&v=beta&t=cOeOowwmUfYGZHLWYZ9lYQOaGPcyNxTiyYOaTu96Qt0",
+           this.logo_empresa="https://live.staticflickr.com/65535/52193414795_81580c432d_q.jpg",
             this.link_site="https://voicemanager.cloud/",
             this.link_telephone="tel:"+this.telephone,
             this.email="contato@voicemanager.cloud",
@@ -216,7 +216,7 @@ export default {
             this.youtube="https://www.youtube.com/c/VoiceManager/videos"
 
         } else if(this.select==="Metodo" && this.checkbox){
-           this.logo_empresa="https://media-exp1.licdn.com/dms/image/C4D0BAQHXdfvHPgp7qg/company-logo_200_200/0/1610112149514?e=1655942400&v=beta&t=4FFTHMRRbH1Kbz8Rn66gmDHowMpdiGM42-dasuAwFSE",
+           this.logo_empresa="https://live.staticflickr.com/65535/52193219854_b69ee35946_q.jpg",
             this.link_site="https://metodotelecom.com.br/",
             this.link_telephone="tel:"+this.telephone,
             this.link_email="mailto:atendimento@metodotelecom.com.br",
